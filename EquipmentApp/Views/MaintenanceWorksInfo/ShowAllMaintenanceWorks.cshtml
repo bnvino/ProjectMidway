@@ -1,0 +1,30 @@
+﻿
+<table><tr><td height="10px"></td></tr></table>
+<table cellpadding="4" cellspacing="4" width="70%" align="center"
+       style="background-color: skyblue; border:solid 2px red; padding-top:20px;">
+    <thead>
+        <tr style="background-color:#F5F5F5;">
+            <th>Maintenance Work ID</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Work Description</th>
+            <th>Equipment Id</th>
+            <th>Time Taken</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="main in MaintenanceWork">
+            <td>{{main.id}}</td>
+            <td>{{main.date}}</td>
+            <td>{{main.time}}</td>
+            <td>{{main.workDescription}}</td>
+            <td>{{main.equipmentId}}</td>
+            <td>{{main.timeTaken}}</td>
+            <td><a href="" data-ng-click="EditMaintenanceWork(main.id)">Edit</a></td>
+            <td><a href="" data-ng-click="DeleteMaintenanceWork(main.id)">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
+

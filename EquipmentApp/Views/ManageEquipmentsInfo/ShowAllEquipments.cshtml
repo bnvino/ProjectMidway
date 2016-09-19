@@ -1,0 +1,21 @@
+﻿<table><tr><td height="10px"></td></tr></table>
+<table cellpadding="4" cellspacing="4" width="70%" align="center"
+       style="background-color:skyblue; border:solid 2px red; padding-top:20px;">
+    <thead>
+        <tr style="background-color:#F5F5F5;">
+            <th>Equipment ID</th>
+            <th>Equipment Name</th>
+            <th></th>
+            <th></th>
+</tr>
+    </thead>
+    <tbody>
+        <tr data-ng-repeat="equip in Equipment">
+            <td>{{equip.id}}</td>
+            <td>{{equip.equipmentName}}</td>
+            <td><a href="" data-ng-click="EditEquipment(equip.id)">Edit</a></td>
+            <td><a href="" data-ng-click="DeleteEquipment(equip.id)">Delete</a></td>
+        </tr>
+    </tbody>
+</table>
+
