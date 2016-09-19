@@ -13,7 +13,7 @@
         
         var promisePost = SPACRUDService.postEquipment(Equipment);
 
-        //alert(JSON.stringify(promisePost.$$state.status));
+        alert(JSON.stringify(promisePost.$$state.status));
 
         var status = JSON.stringify(promisePost.$$state.status);
 
