@@ -1,5 +1,5 @@
 ﻿app.service("SPACRUDService", function ($http) {
-
+    debugger;
     //Read all Equipments  
     this.getEquipments = function () {
 
@@ -18,17 +18,11 @@
             url: "/api/ManageEquipmentsInfoAPI",
             data: Equipment
         });
-        //request.success(function (msg) {
 
-        //    alert(JSON.stringify(request));//"Request Success: " + msg);
-        //});
-        //alert(JSON.stringify(request));
-        //request.fail(function (jqXHR, textStatus) {
-        //    alert(JSON.stringify(request));
-        //    //alert("Request failed: " + textStatus);
-        //});
         return request;
     };
+
+   
 
     //Edit Equipment By ID   
     this.putEquipment = function (id, Equipment) {
