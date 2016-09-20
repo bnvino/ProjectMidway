@@ -1,6 +1,17 @@
-﻿app.controller('AddMaintenanceWorkController', function ($scope, SPACRUDService) {
-    $scope.Id = 0;
+﻿app.controller('AddMaintenanceWorkController', function ($scope,SPACRUDService) {
+    //$scope.Id = 0;
     //$scope.EquipmentName = "initial";
+
+    loadAllEquipmentsRecords();
+
+    function loadAllEquipmentsRecords() {
+
+        var promiseGetEquipment = SPACRUDService.getEquipments();
+        promiseGetEquipment.then(function (pl) { $scope.Equipment = pl.data },
+              function (errorPl) {
+                  $scope.error = errorPl;
+              });
+    }
 
     $scope.save = function () {
         var MaintenanceWork = {
@@ -10,11 +21,12 @@
             WorkDescription: $scope.WorkDescription,
             EquipmentId: $scope.EquipmentId,
             TimeTaken: $scope.TimeTaken
-            //EquipmentName: $scope.EquipmentName
 
         };
+        
 
         var promisePost = SPACRUDService.postMaintenanceWork(MaintenanceWork);
+        //alert(promisePost);
 
         promisePost.then(function (pl) {
             alert("Maintenance Work Saved Successfully.");
