@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td style="text-align:right;">Maintenance Work ID</td>
-            <td><input name="Id" type="text" ng-model="Id" ng-required="true" />  </td>
+            <td><input name="Id" type="number" ng-model="Id" ng-required="true" min="0" />  </td>
         </tr>
         <tr>
             <td style="text-align:right;">Date</td>
@@ -29,7 +29,9 @@
         </tr>
         <tr>
             <td style="text-align:right;">Equipment Id</td>
-            <td><select ng-model="EquipmentId" ng-options="item.id as item.id for item in Equipment"></select></td>
+            <td><select ng-model=" EquipmentId" ng-options="item.id as item.id for item in Equipment">
+                    <option value="">-- Select an option--</option>
+                </select></td>
              
         </tr>
         <tr>
