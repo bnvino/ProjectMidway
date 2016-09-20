@@ -1,47 +1,51 @@
 ﻿@{
     ViewBag.Title = "Add New Maintenance Work";
 }
-<table><tr><td height="10px"></td></tr></table>
+<form name="myForm">
+    <table><tr><td height="10px"></td></tr></table>
 
-<table cellpadding="4" cellspacing="4" width="70%" align="center" style="background-color: skyblue;border:solid 2px red; padding-top:20px;">
-    <tr>
-        <td colspan="3" style="background-color:gray; font-size:18pt;font-weight:bold; height:30px; text-align:center;">
-            Add New Maintenance Work
-        </td>
-    </tr>
-    <tr>
-        <td style="text-align:right;">Maintenance Work ID</td>
-        <td><input type="text" ng-model="Id" />  </td>
-    </tr>
-    <tr>
-        <td style="text-align:right;">Date</td>
-        <td><input type="date" ng-model="Date" />  </td>
-    </tr>
-    <tr>
-        <td style="text-align:right;">Time</td>
-        <td><input type="time" ng-model="Time" />  </td>
+    <table cellpadding="4" cellspacing="4" width="70%" align="center" style="background-color: skyblue;border:solid 2px red; padding-top:20px;">
+        <tr>
+            <td colspan="3" style="background-color:gray; font-size:18pt;font-weight:bold; height:30px; text-align:center;">
+                Add New Maintenance Work
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Maintenance Work ID</td>
+            <td><input name="Id" type="text" ng-model="Id" ng-required="true" />  </td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Date</td>
+            <td><input type="date" ng-model="Date" />  </td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Time</td>
+            <td><input type="time" ng-model="Time" />  </td>
 
-    </tr>
-    <tr>
-        <td style="text-align:right;">Work Description</td>
-        <td><input type="text" ng-model="WorkDescription"/>  </td>
-    </tr>
-    <tr>
-        <td style="text-align:right;">Equipment Id</td>
-        <td><input type="text" ng-model="EquipmentId" />  </td>
-    </tr>
-    <tr>
-        <td style="text-align:right;">Time Taken</td>
-        <td><input type="text" ng-model="TimeTaken" />  </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <input type="button" value="Save" data-ng-click="save()" />
-        </td>
-    </tr>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Work Description</td>
+            <td><input type="text" ng-model="WorkDescription"/>  </td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Equipment Id</td>
+            <td><input type="text" ng-model="EquipmentId" />  </td>
+            @*<td><select ng-model="EquipmentId" ng-options="x for x in Equipment.id"></select>*@
+            <td>
+        </tr>
+        <tr>
+            <td style="text-align:right;">Time Taken</td>
+            <td><input type="text" ng-model="TimeTaken" />  </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button data-ng-click="myForm.Id.$valid && save()"> Save </button>
+            </td>
+        </tr>
 
-</table>
+    </table>
+</form>
 
 
 
