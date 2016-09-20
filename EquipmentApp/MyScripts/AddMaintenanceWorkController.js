@@ -32,7 +32,7 @@
             alert("Maintenance Work Saved Successfully.");
         },
               function (errorPl) {
-                  $scope.error = 'failure saving Maintenance Work', errorPl;
+                  alert("Maintenance Work ID Already exist. Please enter a Unique ID");
               });
 
     };
