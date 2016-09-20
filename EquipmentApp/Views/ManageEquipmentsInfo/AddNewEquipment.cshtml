@@ -12,7 +12,7 @@
         </tr>
         <tr>
             <td style="text-align:right;">Equipment ID</td>
-            <td><input name="Id" type="text" ng-model="Id" ng-required="true"/></td>
+            <td><input name="Id" type="number" ng-model="Id" ng-required="true" min="0"/></td>
            
         </tr>
         
@@ -23,7 +23,7 @@
         <tr>
             <td></td>
             <td>
-                <button value="Save" data-ng-click="myForm.Id.$valid && save()" > Save </button>
+                <button data-ng-click="myForm.Id.$valid && save()" > Save </button>
             </td>
         </tr> 
 
