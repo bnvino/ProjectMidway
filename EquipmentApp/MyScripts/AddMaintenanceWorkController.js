@@ -14,15 +14,29 @@
     }
 
     $scope.save = function () {
+
+
+        var date = new Date($scope.Date);
+        var dateMod = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+
+        var time = new Date($scope.Time);
+        var timeMod = ("0" + time.getHours()).slice(-2) + ':' + ("0" + time.getMinutes()).slice(-2);
+
+        var timeMod1 = time.toLocaleTimeString();
+
         var MaintenanceWork = {
             Id: $scope.Id,
-            Date: $scope.Date,
-            Time: $scope.Time,
+            Date: dateMod,
+            Time: timeMod,
             WorkDescription: $scope.WorkDescription,
             EquipmentId: $scope.EquipmentId,
             TimeTaken: $scope.TimeTaken
 
+        
+
         };
+
+        
         
 
         var promisePost = SPACRUDService.postMaintenanceWork(MaintenanceWork);
